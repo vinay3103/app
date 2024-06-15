@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>View Expenses</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
+
+    /* General styles for body and container */
+    body {
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(to right, #4e54c8, #8f94fb);
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      max-width: 800px;
+      background-color: rgba(255, 255, 255, 0.9);
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Header styles */
+    .header {
+      background-color: #007bff;
+      color: #fff;
+      padding: 10px;
+      text-align: center;
+      border-radius: 8px 8px 0 0;
+      margin: -20px -20px 20px -20px;
+    }
+
+    .header h1 {
+      margin: 0;
+      font-size: 24px;
+    }
+
+    /* Month selector and button styles */
+    #month-selector {
+      padding: 8px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      margin-right: 10px;
+    }
+
+    #load-expenses-btn {
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 4px;
+      background-color: #28a745;
+      color: #fff;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    #load-expenses-btn:hover {
+      background-color: #218838;
+    }
+
+    /* Expense list container */
+    #expense-list-container {
+      margin-top: 20px;
+    }
+
+    #expense-list-container h2 {
+      margin-top: 20px;
+      font-size: 18px;
+      color: #007bff;
+    }
+
+    /* Budget controls and action buttons */
+    #budget-controls {
+      margin-top: 20px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    }
+
+    button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    #change-budget-btn, #delete-budget-btn {
+      background-color: #007bff;
+      color: #fff;
+      margin-right: 10px;
+    }
+
+    #change-budget-btn:hover, #delete-budget-btn:hover {
+      background-color: #0056b3;
+    }
+
+    #clear-all-btn, #back-btn2 {
+      background-color: #007bff;
+      color: #fff;
+      margin-top: 10px;
+    }
+
+    #clear-all-btn:hover {
+      background-color: #c82333;
+    }
+    #back-btn2:hover {
+      background-color: #c82333;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>View Expenses</h1>
+    </div>
+
+    <label for="month-selector">Select Month:</label>
+    <input type="month" id="month-selector">
+    <button id="load-expenses-btn">
+      <i class="fa-solid fa-list"></i> Load Expenses
+    </button>
+
+    <div id="expense-list-container"></div>
+    <h2>Total Expenditures: $<span id="total-expenditures">0.00</span></h2>
+    <h2>Remaining Budget: $<span id="remaining-budget">0.00</span></h2>
+    
+    <div id="budget-controls">
+      <button id="change-budget-btn">
+        <i class="fas fa-edit"></i> Change Budget
+      </button>
+      <button id="delete-budget-btn">
+        <i class="fas fa-trash-alt"></i> Delete Budget
+      </button>
+    </div>
+    
+    <button id="clear-all-btn">
+      <i class="fa-solid fa-trash"></i> Clear All Expenses
+    </button>
+    <button id="back-btn2">
+      <i class="fas fa-arrow-left"></i> Back
+    </button>
+  </div>
+
+  <script src="expenses.js"></script>
+</body>
+</html>
